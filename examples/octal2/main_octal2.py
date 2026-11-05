@@ -1,10 +1,10 @@
 # IoTextra Octal2 — Modbus RTU slave on the real DI/DO module.
 #
-# Standalone board script. It is not wired into IoTflow Kernel.
-# Shared drivers are copied unchanged:
-#   iot_driver.py   — IoTflow Kernel
-#   modbus_slave.py — Stage 1 RTU engine
-#   Digital.json    — IoTflow Forge template for "IoTextra Octal2"
+# Standalone board script.
+# Files used (copied unchanged from other MTH projects):
+#   iot_driver.py   — IoTextra driver, taken from the IoTflow project
+#   modbus_slave.py — Modbus RTU slave engine (repository root)
+#   Digital.json    — IoTextra Octal2 channel template, taken from the IoTflow project
 #
 # Author: Arshia Keshvari
 # Role: Independent Developer, Engineer, and Project Author
@@ -18,7 +18,7 @@
 # numbering as the Octal Node-RED topics output/5 .. output/8.
 # Coil 0 therefore calls set_output(5, ...) and drives LED 1.
 #
-# UART matches the Stage 1 Waveshare bench (UART0, GPIO0 TX, GPIO1 RX).
+# UART matches the Waveshare bench (UART0, GPIO0 TX, GPIO1 RX).
 #
 # PC master check (pymodbus, baud must match the board):
 #   write_coil(address=0, value=True, device_id=1)          # DO channel 4 ON
@@ -41,7 +41,7 @@ import iot_driver
 from iot_driver import IotDriver
 from modbus_slave import ModbusRTUSlave, RegisterStore
 
-# ---- RS485 UART (Stage 1 bench) ----
+# ---- RS485 UART (Waveshare bench) ----
 UART_ID = 0
 TX_PIN = 0
 RX_PIN = 1
