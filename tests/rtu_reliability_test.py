@@ -1,8 +1,8 @@
 """
-IoTflow Modbus RTU reliability / CRC-rate test (PC master).
+Modbus RTU reliability / CRC-rate test (PC master).
 
 Short summary: Issues many consecutive FC03 reads and reports success rate
-and latency — used as CRC error-rate evidence for Stage 1 acceptance.
+and latency — used as CRC error-rate evidence.
 
 Author: Arshia Keshvari
 Role: Independent Developer, Engineer, and Project Author

@@ -1,5 +1,5 @@
 """
-IoTflow Modbus RTU smoke test (PC master).
+Modbus RTU smoke test (PC master).
 
 Short summary: Single FC03 holding-register read to confirm the RS485 link
 and slave address before running the full suite.

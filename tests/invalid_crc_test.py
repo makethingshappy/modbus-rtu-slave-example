@@ -1,5 +1,5 @@
 """
-IoTflow Modbus RTU invalid-CRC edge test (PC master).
+Modbus RTU invalid-CRC edge test (PC master).
 
 Short summary: Sends a corrupted-CRC FC03 request (expect silence), then a
 valid request (expect recovery). Confirms slave drops bad frames per RTU rules.

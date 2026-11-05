@@ -1,5 +1,5 @@
 """
-IoTflow Modbus RTU incomplete-frame edge test (PC master).
+Modbus RTU incomplete-frame edge test (PC master).
 
 Short summary: Sends a truncated request (expect no response), then a full
 valid FC03 to confirm the slave recovers after byte_timeout_ms.

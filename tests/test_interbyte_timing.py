@@ -1,5 +1,5 @@
 """
-IoTflow Modbus RTU inter-byte timing probe (PC master).
+Modbus RTU inter-byte timing probe (PC master).
 
 Short summary: Spaces request bytes by INTERBYTE_GAP_SECONDS to probe
 frame-boundary behaviour relative to slave byte_timeout_ms (default 10 ms).

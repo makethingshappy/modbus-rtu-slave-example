@@ -1,5 +1,5 @@
 """
-IoTflow Modbus RTU back-to-back frame test (PC master).
+Modbus RTU back-to-back frame test (PC master).
 
 Short summary: Sends many valid FC03 requests in succession and checks each
 response matches the stand-in holding-register frame.

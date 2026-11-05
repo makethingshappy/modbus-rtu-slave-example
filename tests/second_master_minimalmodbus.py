@@ -1,7 +1,7 @@
 """
-IoTflow Modbus RTU second-master checklist via minimalmodbus.
+Modbus RTU second-master checklist via minimalmodbus.
 
-Short summary: Re-runs the Stage 1 functional checklist with an independent
+Short summary: Re-runs the functional checklist with an independent
 master library (complement to pymodbus / QModMaster). Can flip board baud via
 mpremote when needed.
 

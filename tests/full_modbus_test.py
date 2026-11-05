@@ -1,7 +1,7 @@
 """
-IoTflow Modbus RTU hardware test suite (PC master).
+Modbus RTU hardware test suite (PC master).
 
-Short summary: Runs the Stage 1 functional checklist over pymodbus at 9600 and
+Short summary: Runs the functional checklist over pymodbus at 9600 and
 115200 against the board-side test_rtu_main.py slave.
 
 Author: Arshia Keshvari
@@ -262,7 +262,7 @@ def run_suite(baudrate):
 
 
 try:
-    print("IoTflow Modbus RTU test suite")
+    print("Modbus RTU test suite")
     print("Port:", PORT)
     print("Slave address:", SLAVE)
     print("Run the board-side test_rtu_main.py throughout.")
