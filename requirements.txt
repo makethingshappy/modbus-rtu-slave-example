@@ -1,0 +1,4 @@
+# PC-side Modbus master test dependencies (not flashed to the board)
+pymodbus>=3.16.1
+pyserial>=3.5
+minimalmodbus>=2.1
