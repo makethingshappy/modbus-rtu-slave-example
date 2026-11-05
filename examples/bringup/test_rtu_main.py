@@ -1,4 +1,4 @@
-# IoTflow Modbus RTU Slave — hardware bring-up test (board-side)
+# Modbus RTU Slave — hardware bring-up test (board-side)
 #
 # Short summary: Runs ModbusRTUSlave on UART with a stand-in register map so a
 # PC master (pymodbus / QModMaster) can verify RTU timing and framing.
@@ -74,7 +74,7 @@ slave = ModbusRTUSlave(
 )
 
 print()
-print("IoTflow Modbus RTU bring-up test")
+print("Modbus RTU bring-up test")
 print("Target: IoTsmart / IoTbase + Waveshare UART-RS485")
 print("UART:", UART_ID)
 print("TX GPIO:", TX_PIN, "RX GPIO:", RX_PIN)
