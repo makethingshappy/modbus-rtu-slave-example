@@ -4,6 +4,8 @@ A small, dependency-free **Modbus RTU slave** engine for MicroPython (MIT), with
 
 This is an open example, not a finished product: the register map is written by hand in the example script.
 
+Full write-up with photos, test results and the pitfalls we hit: [MicroPython Modbus RTU Slave for IoTsmart + IoTextra Octal2 on Hackster.io](https://www.hackster.io/vsk9015/micropython-modbus-rtu-slave-for-iotsmart-iotextra-octal2-3c24bf). Project page: [makethingshappy.io/pages/modbus-rtu-slave](https://makethingshappy.io/pages/modbus-rtu-slave).
+
 ## What's here
 
 | Path | What it is |
