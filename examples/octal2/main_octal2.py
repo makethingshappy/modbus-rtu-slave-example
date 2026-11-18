@@ -124,9 +124,8 @@ def load_template(path):
 class _SoftI2C(machine.SoftI2C):
     """Same call shape as machine.I2C(bus_id, sda=..., scl=..., freq=...).
 
-    On this Pico 2 W, MicroPython 1.29 hardware I2C scans the bus and then
-    returns EIO for every read and write. SoftI2C on the same pins talks to
-    the expander. 100 kHz is the rate that was checked against the TCA9534.
+    Fallback used when hardware I2C does not respond: SoftI2C on the same
+    pins. 100 kHz is the rate that was checked against the TCA9534.
     """
 
     def __init__(self, bus_id, sda, scl, freq=400000, timeout=50000):
@@ -166,7 +165,7 @@ def _prepare_driver_i2c(config):
     # iot_driver looks up machine.I2C when the driver is constructed.
     # The built-in machine module cannot be patched; the driver's global can.
     iot_driver.machine = _MachineI2CProxy()
-    print("I2C: SoftI2C (hardware I2C transfers returned EIO)")
+    print("I2C: SoftI2C fallback (hardware I2C did not respond)")
 
 
 def on_write(block_name, start_address, values):
