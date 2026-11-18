@@ -21,7 +21,7 @@ The Modbus RTU slave engine (`modbus_slave.py`) answers an external Modbus maste
 | Broadcast (address 0) | Write applied, no response — PASS |
 | Multi-drop | Out of scope for this bench (single board) |
 
-**Verdict:** RTU bring-up is successful on this single-node Waveshare path (pymodbus + QModMaster). The original bench was **IoTsmart RP2040**. The same bring-up then passed on **IoTbase Pico 2W (RP2350)** and **IoTsmart ESP32-S3**. On the ESP32-S3, 115200 needs the MicroPython REPL kept off the Modbus UART (`os.dupterm(None)`); with that applied, both baud rates passed.
+**Verdict:** RTU bring-up is successful on this single-node Waveshare path (pymodbus + QModMaster). The original bench was **IoTsmart RP2040**. The same bring-up then passed on **IoTbase Pico 2W (RP2350)** and **IoTsmart ESP32-S3**. On the ESP32-S3, errors at 115200 appeared to be related to the UART being shared with the MicroPython REPL; detaching the REPL (`os.dupterm(None)`) was used in our test configuration, and with it both baud rates passed.
 
 ---
 
@@ -33,7 +33,7 @@ Three carriers were tested on the same external isolated **Waveshare UART-RS485*
 | --- | --- | --- | --- | --- |
 | **IoTsmart RP2040** | UART0 | GPIO0 | GPIO1 | PASS — original bench (RP2040 and RP2350 share the same Waveshare Tiny pinout) |
 | **IoTbase Pico 2W (RP2350)** | UART0 | GPIO0 | GPIO1 | PASS — same UART and pins as the RP2040 bench |
-| **IoTsmart ESP32-S3** | UART1 | GPIO43 | GPIO44 | PASS — UART1. 115200 baud rate needs the REPL detached from the UART (see below) |
+| **IoTsmart ESP32-S3** | UART1 | GPIO43 | GPIO44 | PASS — UART1. At 115200 the REPL was detached from the UART in our test configuration (see below) |
 
 | Item | Value |
 | --- | --- |
@@ -254,5 +254,5 @@ Also PASS at both bauds:
 
 1. Functional checklist and `byte_timeout_ms` tables are from the **IoTsmart RP2040** bench (UART0, GPIO0 TX / GPIO1 RX). CRC reliability (500 FC03 reads per baud) is recorded for RP2040, Pico 2W and ESP32-S3.
 2. **IoTbase Pico 2W (RP2350)** uses the same UART0 and GPIO0/GPIO1 wiring and passed at 9600 and 115200.
-3. **IoTsmart ESP32-S3** uses **UART1** on **GPIO43 (TX)** and **GPIO44 (RX)**. 115200 needs the REPL kept off that UART (`os.dupterm(None)`); with that applied, both baud rates passed.
+3. **IoTsmart ESP32-S3** uses **UART1** on **GPIO43 (TX)** and **GPIO44 (RX)**. At 115200 errors appeared to be related to the REPL sharing the UART; with the REPL detached (`os.dupterm(None)`) in our test configuration, both baud rates passed.
 4. Direction auto-sensing was judged by link stability (no oscilloscope).
